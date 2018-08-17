@@ -23,7 +23,8 @@ app.use((req, res, next) =>{
 	next();
 });
 app.use((req, res, next) =>{
-	res.render('maintenance.hbs');
+	// res.render('maintenance.hbs');
+	next();
 });
 
 app.get('/',(req, res) => {
@@ -53,7 +54,14 @@ app.get('/bad',(req, res) =>{
 	});
 });
 
+app.get('/project',(req, res) =>{
+	res.render('about.hbs', {
+		title : "projects",
+		heading: "Projects",
+	});
+});
+
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);	
-	
+
 });
