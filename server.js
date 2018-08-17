@@ -22,9 +22,9 @@ app.use((req, res, next) =>{
 	fs.appendFileSync('Server.log', log);
 	next();
 });
-// app.use((req, res, next) =>{
-// 	res.render('maintenance.hbs');
-// });
+app.use((req, res, next) =>{
+	res.render('maintenance.hbs');
+});
 
 app.get('/',(req, res) => {
 	// res.send('Hii');
